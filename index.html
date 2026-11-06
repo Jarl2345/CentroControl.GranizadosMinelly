@@ -225,7 +225,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .metric-card { background: white; padding: 18px; border-radius: 16px; box-shadow: var(--shadow-sm); border-left: 5px solid var(--primary); }
         .metric-val { font-size: 22px; font-weight: 800; color: #1e293b; margin-top: 4px; }
@@ -233,67 +233,147 @@
 
         .dueno-section-box {
             background: white;
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 20px;
             box-shadow: var(--shadow-sm);
             margin-bottom: 20px;
         }
 
         .dueno-section-title {
-            font-size: 15px;
+            font-size: 16px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+
+        /* RECUADROS MUCHO MÁS GRANDES Y CÓMODOS */
+        .grid-comandas-grandes {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 25px;
+        }
+
+        .comanda-card-grande {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 25px;
+            border: 2px solid #e2e8f0;
+            border-left: 10px solid #3b82f6;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s;
+        }
+
+        .comanda-card-grande:hover {
+            transform: translateY(-4px);
+            border-color: #cbd5e0;
+            border-left-color: #00b894;
+        }
+
+        .comanda-header-lg {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+        }
+
+        .comanda-turno-lg {
+            font-size: 28px;
+            font-weight: 800;
+            color: #e91e63;
+        }
+
+        .comanda-nombre-lg {
+            font-size: 20px;
             font-weight: 800;
             color: #1e293b;
             margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
-            border-bottom: 2px solid #f1f5f9;
-            padding-bottom: 8px;
         }
 
-        .comanda-card {
+        .comanda-detalles-lg {
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
             background: #f8fafc;
-            border-radius: 14px;
-            padding: 14px;
-            border-left: 5px solid #3b82f6;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-            margin-bottom: 10px;
+            padding: 16px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #edf2f7;
+        }
+
+        .comanda-acciones-lg {
             display: flex;
+            gap: 12px;
             justify-content: space-between;
-            align-items: center;
         }
 
         .btn-listo-voz {
             background: #10b981;
             color: white;
             border: none;
-            padding: 7px 12px;
-            border-radius: 20px;
-            font-size: 11px;
+            padding: 12px 16px;
+            border-radius: 14px;
+            font-size: 13px;
             font-weight: 700;
             cursor: pointer;
+            flex: 1;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
         }
 
         .btn-listo-sin-voz {
             background: #3b82f6;
             color: white;
             border: none;
-            padding: 7px 12px;
-            border-radius: 20px;
-            font-size: 11px;
+            padding: 12px 16px;
+            border-radius: 14px;
+            font-size: 13px;
             font-weight: 700;
             cursor: pointer;
+            flex: 1;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
         }
 
         .btn-rechazar {
             background: #ef4444;
             color: white;
             border: none;
-            padding: 7px 12px;
-            border-radius: 20px;
-            font-size: 11px;
+            padding: 12px 16px;
+            border-radius: 14px;
+            font-size: 13px;
             font-weight: 700;
             cursor: pointer;
+            flex: 1;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+        }
+
+        .btn-reiniciar-dia {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
         }
 
         .editable-table {
@@ -350,13 +430,13 @@
                 <div class="area-card" onclick="abrirModalLogin('personal')">
                     <div class="area-icon">🧑‍🍳</div>
                     <h3 style="margin-bottom: 5px;">Área del Personal</h3>
-                    <p style="font-size: 12px; color: #64748b;">Registrar pedidos presenciales (POS) y gestionar cola.</p>
+                    <p style="font-size: 12px; color: #64748b;">Registrar pedidos presenciales y ver turnos.</p>
                 </div>
 
                 <div class="area-card" onclick="abrirModalLogin('dueno')">
                     <div class="area-icon">👑</div>
                     <h3 style="margin-bottom: 5px;">Área del Dueño</h3>
-                    <p style="font-size: 12px; color: #64748b;">Control total: granizados, pedidos, clientes, inventario y reportes.</p>
+                    <p style="font-size: 12px; color: #64748b;">Control total: granizados, turnos e inventario.</p>
                 </div>
             </div>
         </div>
@@ -376,7 +456,7 @@
         <!-- AREA DEL PERSONAL (CONTENIDO) -->
         <div id="areaPersonal" class="area-content">
             <button class="btn-volver" onclick="volverSelector()">← Volver al selector</button>
-            <h2 style="margin-bottom: 15px;">🧑‍🍳 Registro de Pedidos (Personal / Mostrador)</h2>
+            <h2 style="margin-bottom: 15px;">🧑‍🍳 Registro de Pedidos y Cola en Vivo</h2>
             
             <div class="card-form">
                 <form id="posForm">
@@ -450,19 +530,22 @@
                 </form>
             </div>
 
-            <h3 style="margin: 20px 0 10px 0;">📋 Pedidos Pendientes en Mostrador</h3>
-            <div id="listaPosPedidos">
-                <p style="font-size: 12px; color: #a0aec0;">Cargando...</p>
+            <h3 style="margin: 25px 0 15px 0; font-weight: 800;">📋 Turnos Pendientes</h3>
+            <div id="listaPosPedidos" class="grid-comandas-grandes">
+                <p style="font-size: 12px; color: #a0aec0;">Cargando pedidos...</p>
             </div>
         </div>
 
         <!-- AREA DEL DUEÑO -->
         <div id="areaDueno" class="area-content">
             <button class="btn-volver" onclick="volverSelector()">← Volver al selector</button>
-            <h2 style="margin-bottom: 15px;">👑 Panel de Control Total (Dueño)</h2>
+            <h2 style="margin-bottom: 15px;">👑 Panel de Control Total</h2>
             
             <div class="dueno-section-box">
-                <div class="dueno-section-title">📊 1. Panel Principal & Resumen de Ventas</div>
+                <div class="dueno-section-title">
+                    <span>📊 1. Panel Principal & Resumen de Ventas</span>
+                    <button class="btn-reiniciar-dia" onclick="reiniciarGananciasDia()">🔄 Reiniciar Ganancias</button>
+                </div>
                 <div class="admin-metrics" style="margin-bottom:0;">
                     <div class="metric-card">
                         <div class="metric-lbl">Pedidos Activos en Cola</div>
@@ -480,7 +563,7 @@
             </div>
 
             <div class="dueno-section-box">
-                <div class="dueno-section-title">🍧 2. Gestionar Granizados (Precios, Sabores & Estado)</div>
+                <div class="dueno-section-title">🍧 2. Gestionar Granizados</div>
                 <div style="display: flex; gap: 10px; margin-bottom: 12px;">
                     <input type="text" id="nuevoSaborInput" class="form-input" placeholder="Nombre del nuevo sabor..." style="max-width:250px;">
                     <button class="btn-accion-tabla" onclick="agregarSaborCustom()" style="padding: 8px 14px;">+ Agregar Sabor</button>
@@ -489,33 +572,15 @@
             </div>
 
             <div class="dueno-section-box">
-                <div class="dueno-section-title">📦 3. Gestionar Pedidos (Aceptar, Rechazar & Voz)</div>
-                <p style="font-size: 12px; color: #64748b; margin-bottom: 12px;">Cambia estados, rechaza pedidos o avisa por altavoz cuando estén listos.</p>
-                <div id="listaAdminComandas">
+                <div class="dueno-section-title">📦 3. Gestionar Pedidos</div>
+                <p style="font-size: 12px; color: #64748b; margin-bottom: 15px;">Visualiza con claridad los nombres, sabores y toppings de cada pedido en curso.</p>
+                <div id="listaAdminComandas" class="grid-comandas-grandes">
                     <p style="font-size: 12px; color: #a0aec0;">No hay comandas activas</p>
                 </div>
             </div>
 
             <div class="dueno-section-box">
-                <div class="dueno-section-title">👥 4. Gestionar Clientes & Historial de Compras</div>
-                <div id="tablaClientesHistorial">
-                    <p style="font-size: 12px; color: #64748b;">Cargando historial de clientes...</p>
-                </div>
-            </div>
-
-            <div class="dueno-section-box">
-                <div class="dueno-section-title">🏷️ 5. Gestionar Promociones & Ofertas</div>
-                <div class="form-group">
-                    <label class="form-label">Mensaje de Promoción Activa (Banner Web):</label>
-                    <div style="display:flex; gap:10px;">
-                        <input type="text" id="promoTextoInput" class="form-input" value="¡Granizados 2x1 los fines de semana!">
-                        <button class="btn-accion-tabla" onclick="guardarPromo()" style="padding: 8px 14px;">Actualizar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="dueno-section-box">
-                <div class="dueno-section-title">📦 6. Control de Inventario (Vasos, Hielo & Jarabes)</div>
+                <div class="dueno-section-title">📦 4. Control de Inventario</div>
                 <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
                     <div style="background:#f8fafc; padding:12px; border-radius:10px; border:1px solid #e2e8f0;">
                         <strong>🥛 Vasos Grandes/Pequeños</strong>
@@ -533,7 +598,7 @@
             </div>
 
             <div class="dueno-section-box">
-                <div class="dueno-section-title">📈 7. Reportes & Estadísticas Contables</div>
+                <div class="dueno-section-title">📈 5. Reportes & Estadísticas</div>
                 <div style="font-size: 13px; color: #475569; display: flex; flex-direction: column; gap: 6px;">
                     <div>• <strong>Ganancias Totales Acumuladas:</strong> <span id="repVentasDia" style="color:#00b894; font-weight:800;">$0.00</span></div>
                     <div>• <strong>Total Órdenes Procesadas:</strong> <span id="repTotalPedidos" style="font-weight:700;">0</span> órdenes</div>
@@ -627,6 +692,20 @@
             document.getElementById('selectorArea').style.display = 'flex';
         };
 
+        window.reiniciarGananciasDia = function() {
+            if (confirm("¿Estás seguro de reiniciar las ganancias y el total de órdenes a $0.00 para iniciar un nuevo día?")) {
+                gananciasAcumuladasTotales = 0;
+                totalOrdenesAcumuladas = 0;
+                localStorage.setItem('minelly_ganancias_totales', 0);
+                localStorage.setItem('minelly_ordenes_totales', 0);
+
+                document.getElementById('metGanancias').innerText = "$0.00";
+                document.getElementById('repVentasDia').innerText = "$0.00";
+                document.getElementById('repTotalPedidos').innerText = "0";
+                mostrarToast("🔄 Ganancias y contadores reiniciados para el nuevo día");
+            }
+        };
+
         function renderizarSaboresGestion() {
             const contenedor = document.getElementById('listaSaboresGestion');
             contenedor.innerHTML = '';
@@ -674,12 +753,6 @@
             saboresLista.splice(index, 1);
             renderizarSaboresGestion();
             mostrarToast(`🗑️ Sabor eliminado`);
-        };
-
-        window.guardarPromo = function() {
-            const texto = document.getElementById('promoTextoInput').value;
-            localStorage.setItem('minelly_promo', texto);
-            mostrarToast("✅ Promoción guardada correctamente");
         };
 
         window.actualizarInventarioLocal = function() {
@@ -794,17 +867,10 @@
 
         onSnapshot(collection(db, "pedidos"), (snapshot) => {
             let pedidos = [];
-            let clientesMap = {};
 
             snapshot.forEach(docSnap => {
                 let d = docSnap.data();
                 pedidos.push({ id: docSnap.id, ...d });
-                
-                if(d.nombre) {
-                    if(!clientesMap[d.nombre]) clientesMap[d.nombre] = { compras: 0, totalGastado: 0 };
-                    clientesMap[d.nombre].compras++;
-                    clientesMap[d.nombre].totalGastado += (d.total || 0);
-                }
             });
             pedidos.sort((a, b) => a.creadoEn - b.creadoEn);
 
@@ -819,65 +885,67 @@
             document.getElementById('repVentasDia').innerText = `$${gananciasAcumuladasTotales.toFixed(2)}`;
             document.getElementById('repTotalPedidos').innerText = totalOrdenesAcumuladas;
 
-            const boxClientes = document.getElementById('tablaClientesHistorial');
-            const nombresClientes = Object.keys(clientesMap);
-            if(nombresClientes.length === 0) {
-                boxClientes.innerHTML = '<p style="font-size: 12px; color: #a0aec0;">No hay clientes en cola activa.</p>';
-            } else {
-                let tablaCl = `<table class="editable-table"><tr><th>Cliente</th><th>Pedidos en Cola</th><th>Monto Activo</th></tr>`;
-                nombresClientes.forEach(cli => {
-                    tablaCl += `<tr><td><strong>${cli}</strong></td><td>${clientesMap[cli].compras} activos</td><td>$${clientesMap[cli].totalGastado.toFixed(2)}</td></tr>`;
-                });
-                tablaCl += `</table>`;
-                boxClientes.innerHTML = tablaCl;
-            }
-
-            // Render POS (Personal) con botones completos: Entregar (Sin voz), Entregar con Voz y Rechazar
+            // RENDER RECUADROS GRANDES EN ÁREA PERSONAL
             const boxPos = document.getElementById('listaPosPedidos');
             if (pedidos.length === 0) {
                 boxPos.innerHTML = '<p style="font-size: 12px; color: #a0aec0;">No hay pedidos pendientes</p>';
             } else {
                 boxPos.innerHTML = '';
                 pedidos.forEach(p => {
-                    const div = document.createElement('div');
-                    div.className = 'comanda-card';
-                    div.innerHTML = `
+                    const card = document.createElement('div');
+                    card.className = 'comanda-card-grande';
+                    card.innerHTML = `
                         <div>
-                            <strong>Turno #${p.numeroOrden} - ${p.nombre}</strong>
-                            <div style="font-size:11px; color:#64748b;">${p.tamano} | ${p.sabores} | Top: ${p.toppings}</div>
+                            <div class="comanda-header-lg">
+                                <span class="comanda-turno-lg">Turno #${p.numeroOrden}</span>
+                                <span style="font-size: 15px; font-weight:800; color: #00b894;">$${p.total.toFixed(2)}</span>
+                            </div>
+                            <div class="comanda-nombre-lg">👤 ${p.nombre}</div>
+                            <div class="comanda-detalles-lg">
+                                <div style="margin-bottom: 4px;"><strong>Tamaño:</strong> ${p.tamano}</div>
+                                <div style="margin-bottom: 4px;"><strong>Sabores:</strong> <span style="color:#c0392b; font-weight:700;">${p.sabores}</span></div>
+                                <div><strong>Toppings:</strong> ${p.toppings}</div>
+                            </div>
                         </div>
-                        <div style="display:flex; gap:6px; align-items:center;">
+                        <div class="comanda-acciones-lg">
                             <button class="btn-listo-voz" onclick="completarConVoz('${p.nombre}', ${p.numeroOrden}, '${p.id}', ${p.total})">🔊 Con Voz</button>
                             <button class="btn-listo-sin-voz" onclick="completarSinVoz('${p.id}', ${p.total}, ${p.numeroOrden})">✅ Entregar</button>
                             <button class="btn-rechazar" onclick="rechazarPedido('${p.id}', ${p.numeroOrden})">Eliminar</button>
                         </div>
                     `;
-                    boxPos.appendChild(div);
+                    boxPos.appendChild(card);
                 });
             }
 
-            // Render Dueño con los 3 botones: Con Voz, Sin Voz y Rechazar
+            // RENDER RECUADROS GRANDES EN ÁREA DUEÑO
             const boxDueno = document.getElementById('listaAdminComandas');
             if (pedidos.length === 0) {
                 boxDueno.innerHTML = '<p style="font-size: 12px; color: #a0aec0;">No hay comandas activas</p>';
             } else {
                 boxDueno.innerHTML = '';
                 pedidos.forEach(p => {
-                    const div = document.createElement('div');
-                    div.className = 'comanda-card';
-                    div.innerHTML = `
+                    const card = document.createElement('div');
+                    card.className = 'comanda-card-grande';
+                    card.innerHTML = `
                         <div>
-                            <strong>Turno #${p.numeroOrden} - ${p.nombre}</strong>
-                            <div style="font-size:11px; color:#64748b;">${p.tamano} | ${p.sabores} | Top: ${p.toppings}</div>
-                            <div style="font-weight:800; color:#00b894; font-size:13px; margin-top:2px;">$${p.total.toFixed(2)}</div>
+                            <div class="comanda-header-lg">
+                                <span class="comanda-turno-lg">Turno #${p.numeroOrden}</span>
+                                <span style="font-size: 15px; font-weight:800; color: #00b894;">$${p.total.toFixed(2)}</span>
+                            </div>
+                            <div class="comanda-nombre-lg">👤 ${p.nombre}</div>
+                            <div class="comanda-detalles-lg">
+                                <div style="margin-bottom: 4px;"><strong>Tamaño:</strong> ${p.tamano}</div>
+                                <div style="margin-bottom: 4px;"><strong>Sabores:</strong> <span style="color:#c0392b; font-weight:700;">${p.sabores}</span></div>
+                                <div><strong>Toppings:</strong> ${p.toppings}</div>
+                            </div>
                         </div>
-                        <div style="display:flex; gap:6px; align-items:center;">
+                        <div class="comanda-acciones-lg">
                             <button class="btn-listo-voz" onclick="completarConVoz('${p.nombre}', ${p.numeroOrden}, '${p.id}', ${p.total})">🔊 Con Voz</button>
                             <button class="btn-listo-sin-voz" onclick="completarSinVoz('${p.id}', ${p.total}, ${p.numeroOrden})">🔇 Sin Voz</button>
                             <button class="btn-rechazar" onclick="rechazarPedido('${p.id}', ${p.numeroOrden})">Rechazar</button>
                         </div>
                     `;
-                    boxDueno.appendChild(div);
+                    boxDueno.appendChild(card);
                 });
             }
         });
